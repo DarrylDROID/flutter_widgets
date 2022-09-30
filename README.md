@@ -5,8 +5,11 @@ A new Flutter project.
 ## Getting Started
 
 Nama : Oey Darryl Valencio Wijaya
+
 NIM : 0706012010025
+
 Matkul : Digital Entrepreneurship Product Development
+
 Tugas : Flutter Widgets Part 1
 
 This project is a starting point for a Flutter application.
