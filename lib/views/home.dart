@@ -8,6 +8,7 @@ class HomePageWidget extends StatefulWidget {
 }
 
 class _HomePageWidgetState extends State<HomePageWidget> {
+  IconData icon = Icons.favorite_border;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         ),
       ),
       backgroundColor: Colors.white,
-      body: Center(
+      body: Container(
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -42,21 +43,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     width: double.infinity,
                     height: double.infinity,
                     fit: BoxFit.cover,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: FloatingActionButton(
-                        splashColor: Colors.red,
-                        backgroundColor: Colors.white,
-                        onPressed: () {},
-                        child: Icon(
-                          Icons.favorite,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
                   ),
                 ]),
               ),
@@ -125,7 +111,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -152,6 +138,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
         ),
       ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 100),
+        child: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              icon = icon == Icons.favorite
+                  ? Icons.favorite_border
+                  : Icons.favorite;
+            });
+          },
+          tooltip: 'Favorite',
+          backgroundColor: Colors.white,
+          foregroundColor: Color.fromARGB(255, 255, 0, 0),
+          child: Icon(icon),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 }
